@@ -8,7 +8,6 @@
 
 import UIKit
 import WebKit
-import SwiftyTimer
 
 protocol HTML2PDFRendererDelegate: class {
 	func html2pdfRenderer(_ renderer: HTML2PDFRenderer, didCreatePDFAtFileURL url: URL)
@@ -31,10 +30,6 @@ private extension HTML2PDFRenderer {
 		case paperRect
 		case printableRect
 	}
-}
-
-extension HTML2PDFRenderer: Loggable {
-	var defaultLoggingTag: LogTag { return .assets }
 }
 
 extension HTML2PDFRenderer {
@@ -60,7 +55,12 @@ extension HTML2PDFRenderer {
 		view.addSubview(webView)
 		self.webView = webView
 
-		webView.loadFileURL(htmlURL, allowingReadAccessTo: accessURL)
+		if htmlURL.isFileURL {
+			webView.loadFileURL(htmlURL, allowingReadAccessTo: accessURL)
+		} else {
+			let req = URLRequest(url: htmlURL)
+			webView.load(req)
+		}
 
 		webLoadingTimer = Timer.every(0.5, {
 			[weak self] timer in
