@@ -14,18 +14,23 @@ protocol HTML2PDFRendererDelegate: class {
 	func html2pdfRenderer(_ renderer: HTML2PDFRenderer, didFailedWithError error: Error)
 }
 
+///	Uses UIPrintPageRenderer to create PDF file out of HTML web page loaded in WKWebView.
+///
+/// See `PaperSize` enum for declaration of supported pages. Extend as needed.
 final class HTML2PDFRenderer {
 	weak var delegate: HTML2PDFRendererDelegate?
 
 	typealias Callback = (URL?, Error?) -> Void
 
-	//
+	//	Internal
 
 	private var webView: WKWebView?
 	private var webLoadingTimer: Timer?
 }
 
 private extension HTML2PDFRenderer {
+	///	UIPrintPageRenderer attributes are read-only, but they can be set using KVC.
+	///	Thus modeling those attributes with this enum.
 	enum Key: String {
 		case paperRect
 		case printableRect
@@ -33,11 +38,14 @@ private extension HTML2PDFRenderer {
 }
 
 extension HTML2PDFRenderer {
+	///	Takes the given `htmlURL`, creates hidden `WKWebView`, waits for the web page to load,
+	///	then calls the other method below.
 	///
+	///	Supports both http and file URLs.
 	func render(htmlURL: URL,
 				toPDF pdfURL: URL,
 				paperSize: PaperSize,
-				fileName: String? = nil,
+				paperMargins: UIEdgeInsets = .zero,
 				delegate: HTML2PDFRendererDelegate? = nil,
 				callback: @escaping Callback = {_, _ in})
 	{
@@ -89,14 +97,11 @@ extension HTML2PDFRenderer {
 	func render(webView: WKWebView,
 				toPDF pdfURL: URL,
 				paperSize: PaperSize,
+				paperMargins: UIEdgeInsets = .zero,
 				delegate: HTML2PDFRendererDelegate? = nil,
 				callback: Callback = {_, _ in})
 	{
 		let fm = FileManager.default
-		if !pdfURL.isFileURL {
-			log(level: .warning, "Given PDF path is not file URL")
-			return
-		}
 		if !fm.lookupOrCreate(directoryAt: pdfURL.deletingLastPathComponent()) {
 			log(level: .warning, "Can't access PDF's parent folder:\n\( pdfURL.deletingLastPathComponent() )")
 			return
@@ -104,9 +109,15 @@ extension HTML2PDFRenderer {
 
 		let renderer = UIPrintPageRenderer()
 		renderer.addPrintFormatter(webView.viewPrintFormatter(), startingAtPageAt: 0)
+
 		let paperRect = CGRect(x: 0, y: 0, width: paperSize.size.width, height: paperSize.size.height)
-		let printableRect = paperRect.insetBy(dx: 0, dy: 20)
 		renderer.setValue(paperRect, forKey: Key.paperRect.rawValue)
+
+		var printableRect = paperRect
+		printableRect.origin.x += paperMargins.left
+		printableRect.origin.y += paperMargins.top
+		printableRect.size.width -= (paperMargins.left + paperMargins.right)
+		printableRect.size.height -= (paperMargins.top + paperMargins.bottom)
 		renderer.setValue(printableRect, forKey: Key.printableRect.rawValue)
 
 		let pdfData = renderer.makePDF()
