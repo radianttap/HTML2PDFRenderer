@@ -11,7 +11,7 @@
 import UIKit
 import WebKit
 
-protocol HTML2PDFRendererDelegate: class {
+public protocol HTML2PDFRendererDelegate: class {
 	func html2pdfRenderer(_ renderer: HTML2PDFRenderer, didCreatePDFAtFileURL url: URL)
 	func html2pdfRenderer(_ renderer: HTML2PDFRenderer, didFailedWithError error: Error)
 }
@@ -19,10 +19,10 @@ protocol HTML2PDFRendererDelegate: class {
 ///	Uses UIPrintPageRenderer to create PDF file out of HTML web page loaded in WKWebView.
 ///
 /// See `PaperSize` enum for declaration of supported pages. Extend as needed.
-final class HTML2PDFRenderer {
+public final class HTML2PDFRenderer {
 	weak var delegate: HTML2PDFRendererDelegate?
 
-	typealias Callback = (URL?, Error?) -> Void
+	public typealias Callback = (URL?, Error?) -> Void
 
 	//	Internal
 
@@ -44,7 +44,7 @@ extension HTML2PDFRenderer {
 	///	then calls the other method below.
 	///
 	///	Supports both http and file URLs.
-	func render(htmlURL: URL,
+	public func render(htmlURL: URL,
 				toPDF pdfURL: URL,
 				paperSize: PaperSize,
 				paperMargins: UIEdgeInsets = .zero,
@@ -96,7 +96,7 @@ extension HTML2PDFRenderer {
 	///
 	///	You can supply `delegate` and/or `callback` closure.
 	///	Both will be called and given back the file URL where PDF is created or an Error.
-	func render(webView: WKWebView,
+	public func render(webView: WKWebView,
 				toPDF pdfURL: URL,
 				paperSize: PaperSize,
 				paperMargins: UIEdgeInsets = .zero,

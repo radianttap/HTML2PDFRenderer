@@ -11,7 +11,7 @@
 import UIKit
 
 extension HTML2PDFRenderer {
-	enum PaperSize {
+	public enum PaperSize {
 		case a4
 		case letter
 

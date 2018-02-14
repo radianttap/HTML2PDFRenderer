@@ -11,7 +11,7 @@
 import UIKit
 
 extension UIPrintPageRenderer {
-	func makePDF() -> Data {
+	public func makePDF() -> Data {
 		let data = NSMutableData()
 
 		UIGraphicsBeginPDFContextToData(data, paperRect, nil)
