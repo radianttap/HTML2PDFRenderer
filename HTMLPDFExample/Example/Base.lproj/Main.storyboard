@@ -53,6 +53,9 @@
                         <viewLayoutGuide key="safeArea" id="0kK-hv-rWW"/>
                     </view>
                     <navigationItem key="navigationItem" id="fKI-o5-aYr"/>
+                    <connections>
+                        <outlet property="webView" destination="FQU-Pg-lzb" id="KI3-Tc-vVh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CpY-u3-dSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

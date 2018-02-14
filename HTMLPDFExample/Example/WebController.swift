@@ -21,11 +21,27 @@ extension WebController {
 		super.viewDidLoad()
 
 		setupNavigationBarButtons()
+
+		setupWebView()
+		loadWebPage()
 	}
 }
 
 
 private extension WebController {
+	func setupWebView() {
+		webView.configuration.preferences.setValue(true, forKey: "allowFileAccessFromFileURLs")
+	}
+
+	func loadWebPage() {
+		guard
+			let url = Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "html")
+		else { return }
+
+		let accessURL = url.deletingLastPathComponent()
+		webView.loadFileURL(url, allowingReadAccessTo: accessURL)
+	}
+
 	func setupNavigationBarButtons() {
 
 		let makePDF = UIBarButtonItem(title: NSLocalizedString("Save PDF", comment: "")) {
@@ -40,3 +56,4 @@ private extension WebController {
 
 	}
 }
+
