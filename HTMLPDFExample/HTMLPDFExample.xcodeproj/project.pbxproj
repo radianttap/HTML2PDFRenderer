@@ -10,6 +10,12 @@
 		D04CCAD520349B9E0031FFB1 /* html in Resources */ = {isa = PBXBuildFile; fileRef = D04CCAD420349B9E0031FFB1 /* html */; };
 		D04CCAD720349C8D0031FFB1 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04CCAD620349C8D0031FFB1 /* WebController.swift */; };
 		D04CCADA20349D8F0031FFB1 /* ActionClosurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04CCAD920349D8F0031FFB1 /* ActionClosurable.swift */; };
+		D04CCAE42034A7940031FFB1 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04CCADE2034A7940031FFB1 /* Log.swift */; };
+		D04CCAE52034A7940031FFB1 /* SwiftyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04CCADF2034A7940031FFB1 /* SwiftyTimer.swift */; };
+		D04CCAE62034A7940031FFB1 /* HTMLPDFRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04CCAE02034A7940031FFB1 /* HTMLPDFRenderer.swift */; };
+		D04CCAE72034A7940031FFB1 /* FileManager-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04CCAE12034A7940031FFB1 /* FileManager-Extensions.swift */; };
+		D04CCAE82034A7940031FFB1 /* UIPrintPageRenderer-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04CCAE22034A7940031FFB1 /* UIPrintPageRenderer-Extensions.swift */; };
+		D04CCAE92034A7940031FFB1 /* PDFPaperSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04CCAE32034A7940031FFB1 /* PDFPaperSize.swift */; };
 		D0CCB5DD20221FE000F98146 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCB5DC20221FE000F98146 /* AppDelegate.swift */; };
 		D0CCB5E420221FE000F98146 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0CCB5E220221FE000F98146 /* Main.storyboard */; };
 		D0CCB5E620221FE000F98146 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0CCB5E520221FE000F98146 /* Assets.xcassets */; };
@@ -20,6 +26,12 @@
 		D04CCAD420349B9E0031FFB1 /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
 		D04CCAD620349C8D0031FFB1 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		D04CCAD920349D8F0031FFB1 /* ActionClosurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionClosurable.swift; sourceTree = "<group>"; };
+		D04CCADE2034A7940031FFB1 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Log.swift; path = ../Log.swift; sourceTree = "<group>"; };
+		D04CCADF2034A7940031FFB1 /* SwiftyTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyTimer.swift; path = ../SwiftyTimer.swift; sourceTree = "<group>"; };
+		D04CCAE02034A7940031FFB1 /* HTMLPDFRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTMLPDFRenderer.swift; path = ../HTMLPDFRenderer.swift; sourceTree = "<group>"; };
+		D04CCAE12034A7940031FFB1 /* FileManager-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "FileManager-Extensions.swift"; path = "../FileManager-Extensions.swift"; sourceTree = "<group>"; };
+		D04CCAE22034A7940031FFB1 /* UIPrintPageRenderer-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIPrintPageRenderer-Extensions.swift"; path = "../UIPrintPageRenderer-Extensions.swift"; sourceTree = "<group>"; };
+		D04CCAE32034A7940031FFB1 /* PDFPaperSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PDFPaperSize.swift; path = ../PDFPaperSize.swift; sourceTree = "<group>"; };
 		D0CCB5D920221FE000F98146 /* HTMLPDFExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTMLPDFExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0CCB5DC20221FE000F98146 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0CCB5E320221FE000F98146 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,9 +60,23 @@
 			path = Example/Vendor;
 			sourceTree = "<group>";
 		};
+		D04CCADD2034A76F0031FFB1 /* HTML2PDFRenderer */ = {
+			isa = PBXGroup;
+			children = (
+				D04CCAE12034A7940031FFB1 /* FileManager-Extensions.swift */,
+				D04CCAE02034A7940031FFB1 /* HTMLPDFRenderer.swift */,
+				D04CCADE2034A7940031FFB1 /* Log.swift */,
+				D04CCAE32034A7940031FFB1 /* PDFPaperSize.swift */,
+				D04CCADF2034A7940031FFB1 /* SwiftyTimer.swift */,
+				D04CCAE22034A7940031FFB1 /* UIPrintPageRenderer-Extensions.swift */,
+			);
+			name = HTML2PDFRenderer;
+			sourceTree = "<group>";
+		};
 		D0CCB5D020221FE000F98146 = {
 			isa = PBXGroup;
 			children = (
+				D04CCADD2034A76F0031FFB1 /* HTML2PDFRenderer */,
 				D04CCAD820349D8F0031FFB1 /* Vendor */,
 				D0CCB5DB20221FE000F98146 /* Example */,
 				D0CCB5DA20221FE000F98146 /* Products */,
@@ -152,9 +178,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D04CCAE92034A7940031FFB1 /* PDFPaperSize.swift in Sources */,
 				D04CCAD720349C8D0031FFB1 /* WebController.swift in Sources */,
 				D04CCADA20349D8F0031FFB1 /* ActionClosurable.swift in Sources */,
+				D04CCAE42034A7940031FFB1 /* Log.swift in Sources */,
+				D04CCAE62034A7940031FFB1 /* HTMLPDFRenderer.swift in Sources */,
+				D04CCAE52034A7940031FFB1 /* SwiftyTimer.swift in Sources */,
+				D04CCAE82034A7940031FFB1 /* UIPrintPageRenderer-Extensions.swift in Sources */,
 				D0CCB5DD20221FE000F98146 /* AppDelegate.swift in Sources */,
+				D04CCAE72034A7940031FFB1 /* FileManager-Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

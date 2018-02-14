@@ -53,7 +53,41 @@ private extension WebController {
 	}
 
 	func savePDF() {
+		let fm = FileManager.default
+		guard let pdfURL = fm.documentsURL?.appendingPathComponent("order.pdf") else { return }
 
+		if fm.fileExists(atPath: pdfURL.path) {
+			do {
+				try fm.removeItem(at: pdfURL)
+			} catch let fileError {
+				let ac = UIAlertController(title: nil, message: fileError.localizedDescription, preferredStyle: .alert)
+				ac.addAction( UIAlertAction(title: "OK", style: .default, handler: nil) )
+				self.present(ac, animated: true, completion: nil)
+				return
+			}
+		}
+
+		let renderer = HTML2PDFRenderer()
+		renderer.render(webView: self.webView, toPDF: pdfURL, paperSize: .a4, paperMargins: UIEdgeInsetsMake(30, 0, 0, 0)) {
+			url, error in
+
+			if let error = error {
+				DispatchQueue.main.async {
+					let ac = UIAlertController(title: nil, message: error.localizedDescription, preferredStyle: .alert)
+					ac.addAction( UIAlertAction(title: "OK", style: .default, handler: nil) )
+					self.present(ac, animated: true, completion: nil)
+				}
+				return
+			}
+
+			print("URL: \( url?.path ?? "" )")
+			DispatchQueue.main.async {
+				let m = NSLocalizedString("PDF generated, at this app's Documents folder.\n\n(Look in the console for full URL)", comment: "")
+				let ac = UIAlertController(title: nil, message: m, preferredStyle: .alert)
+				ac.addAction( UIAlertAction(title: "OK", style: .default, handler: nil) )
+				self.present(ac, animated: true, completion: nil)
+			}
+		}
 	}
 }
 
