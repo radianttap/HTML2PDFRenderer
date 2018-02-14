@@ -63,14 +63,22 @@
 		D04CCADD2034A76F0031FFB1 /* HTML2PDFRenderer */ = {
 			isa = PBXGroup;
 			children = (
-				D04CCAE12034A7940031FFB1 /* FileManager-Extensions.swift */,
 				D04CCAE02034A7940031FFB1 /* HTMLPDFRenderer.swift */,
-				D04CCADE2034A7940031FFB1 /* Log.swift */,
 				D04CCAE32034A7940031FFB1 /* PDFPaperSize.swift */,
-				D04CCADF2034A7940031FFB1 /* SwiftyTimer.swift */,
 				D04CCAE22034A7940031FFB1 /* UIPrintPageRenderer-Extensions.swift */,
+				D04CCAEA2034AB940031FFB1 /* Helpers */,
 			);
 			name = HTML2PDFRenderer;
+			sourceTree = "<group>";
+		};
+		D04CCAEA2034AB940031FFB1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D04CCAE12034A7940031FFB1 /* FileManager-Extensions.swift */,
+				D04CCADE2034A7940031FFB1 /* Log.swift */,
+				D04CCADF2034A7940031FFB1 /* SwiftyTimer.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		D0CCB5D020221FE000F98146 = {
