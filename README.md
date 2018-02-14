@@ -12,7 +12,7 @@
 	- FileManager-Extensions.swift (simplified version from the [one in Swift Essentials](https://github.com/radianttap/Swift-Essentials/blob/master/Foundation/FileManager-Extensions.swift))
 	- Log.swift (simplest logging utility)
 	- SwiftyTimer.swift (this [micro-library](https://github.com/radex/SwiftyTimer))
-3. Now PaperSize.swift to add custom paper sizes if you need them or use A4 or Letter
+3. Now edit `PaperSize.swift` to add custom paper sizes if you need them or use A4 or Letter which are already declared.
 
 See example project (run it in landscape iPhone) how it can be used.
 
@@ -21,7 +21,7 @@ See example project (run it in landscape iPhone) how it can be used.
 I’ve added simple .podspec file but I don’t use this library as CocoaPod, ever. Reasons:
 
 - it’s very simple
-- I may need to tweak PaperSize, per project
+- I may need to tweak paper size, per project
 - I want to use better log tool then `print`
 - I usually use full Swift-Essentials collection of micro-libraries instead of just FileManager
 
@@ -52,22 +52,22 @@ There are two methods:
 
 ```swift
 func render(webView: WKWebView,
-				toPDF pdfURL: URL,
-				paperSize: PaperSize,
-				paperMargins: UIEdgeInsets = .zero,
-				delegate: HTML2PDFRendererDelegate? = nil,
-				callback: Callback = {_, _ in})
+		toPDF pdfURL: URL,
+		paperSize: PaperSize,
+		paperMargins: UIEdgeInsets = .zero,
+		delegate: HTML2PDFRendererDelegate? = nil,
+		callback: Callback = {_, _ in})
 ```
 
 (2) Supply HTML URL you want to load + file URL where to save the generated PDF. In this case, library will create hidden WKWebView, load the given URL, wait until it’s fully loaded and then generate the PDF.
 
 ```swift
 func render(htmlURL: URL,
-				toPDF pdfURL: URL,
-				paperSize: PaperSize,
-				paperMargins: UIEdgeInsets = .zero,
-				delegate: HTML2PDFRendererDelegate? = nil,
-				callback: @escaping Callback = {_, _ in})
+		toPDF pdfURL: URL,
+		paperSize: PaperSize,
+		paperMargins: UIEdgeInsets = .zero,
+		delegate: HTML2PDFRendererDelegate? = nil,
+		callback: @escaping Callback = {_, _ in})
 ```
 
 
@@ -75,7 +75,7 @@ func render(htmlURL: URL,
 
 This library uses [UIPrintPageRenderer](https://developer.apple.com/documentation/uikit/uiprintpagerenderer) class, thus what you are actually doing is **printing**. 
 
-Hence the PDF will look like the same as if you have done print in the Safari.
+Hence the PDF will look the same as if you have printed from Safari.
 
 ## License
 
