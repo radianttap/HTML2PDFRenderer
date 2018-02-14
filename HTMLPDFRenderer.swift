@@ -3,6 +3,8 @@
 //  HTMLPDFRenderer
 //
 //  Copyright © 2015 Aleksandar Vacić, Radiant Tap
+//	https://github.com/radianttap/HTML2PDFRenderer
+//
 //  MIT License · http://choosealicense.com/licenses/mit/
 //
 

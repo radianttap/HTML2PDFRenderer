@@ -3,6 +3,8 @@
 //  Radiant Tap Essentials
 //
 //  Copyright © 2016 Radiant Tap
+//	https://github.com/radianttap/Swift-Essentials
+//
 //  MIT License · http://choosealicense.com/licenses/mit/
 //
 
