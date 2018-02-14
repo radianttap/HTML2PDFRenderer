@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D04CCAD520349B9E0031FFB1 /* html in Resources */ = {isa = PBXBuildFile; fileRef = D04CCAD420349B9E0031FFB1 /* html */; };
+		D04CCAD720349C8D0031FFB1 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04CCAD620349C8D0031FFB1 /* WebController.swift */; };
 		D0CCB5DD20221FE000F98146 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCB5DC20221FE000F98146 /* AppDelegate.swift */; };
-		D0CCB5DF20221FE000F98146 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCB5DE20221FE000F98146 /* MasterViewController.swift */; };
-		D0CCB5E120221FE000F98146 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CCB5E020221FE000F98146 /* DetailViewController.swift */; };
 		D0CCB5E420221FE000F98146 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0CCB5E220221FE000F98146 /* Main.storyboard */; };
 		D0CCB5E620221FE000F98146 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0CCB5E520221FE000F98146 /* Assets.xcassets */; };
 		D0CCB5E920221FE000F98146 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0CCB5E720221FE000F98146 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D04CCAD420349B9E0031FFB1 /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
+		D04CCAD620349C8D0031FFB1 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		D0CCB5D920221FE000F98146 /* HTMLPDFExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTMLPDFExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0CCB5DC20221FE000F98146 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D0CCB5DE20221FE000F98146 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		D0CCB5E020221FE000F98146 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D0CCB5E320221FE000F98146 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0CCB5E520221FE000F98146 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0CCB5E820221FE000F98146 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,13 +56,13 @@
 		D0CCB5DB20221FE000F98146 /* HTMLPDFExample */ = {
 			isa = PBXGroup;
 			children = (
+				D04CCAD420349B9E0031FFB1 /* html */,
 				D0CCB5DC20221FE000F98146 /* AppDelegate.swift */,
-				D0CCB5DE20221FE000F98146 /* MasterViewController.swift */,
-				D0CCB5E020221FE000F98146 /* DetailViewController.swift */,
 				D0CCB5E220221FE000F98146 /* Main.storyboard */,
 				D0CCB5E520221FE000F98146 /* Assets.xcassets */,
 				D0CCB5E720221FE000F98146 /* LaunchScreen.storyboard */,
 				D0CCB5EA20221FE000F98146 /* Info.plist */,
+				D04CCAD620349C8D0031FFB1 /* WebController.swift */,
 			);
 			path = HTMLPDFExample;
 			sourceTree = "<group>";
@@ -127,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0CCB5E920221FE000F98146 /* LaunchScreen.storyboard in Resources */,
+				D04CCAD520349B9E0031FFB1 /* html in Resources */,
 				D0CCB5E620221FE000F98146 /* Assets.xcassets in Resources */,
 				D0CCB5E420221FE000F98146 /* Main.storyboard in Resources */,
 			);
@@ -139,8 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0CCB5E120221FE000F98146 /* DetailViewController.swift in Sources */,
-				D0CCB5DF20221FE000F98146 /* MasterViewController.swift in Sources */,
+				D04CCAD720349C8D0031FFB1 /* WebController.swift in Sources */,
 				D0CCB5DD20221FE000F98146 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
