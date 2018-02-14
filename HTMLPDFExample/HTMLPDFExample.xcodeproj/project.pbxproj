@@ -40,7 +40,7 @@
 		D0CCB5D020221FE000F98146 = {
 			isa = PBXGroup;
 			children = (
-				D0CCB5DB20221FE000F98146 /* HTMLPDFExample */,
+				D0CCB5DB20221FE000F98146 /* Example */,
 				D0CCB5DA20221FE000F98146 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,7 +53,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D0CCB5DB20221FE000F98146 /* HTMLPDFExample */ = {
+		D0CCB5DB20221FE000F98146 /* Example */ = {
 			isa = PBXGroup;
 			children = (
 				D04CCAD420349B9E0031FFB1 /* html */,
@@ -64,7 +64,7 @@
 				D0CCB5EA20221FE000F98146 /* Info.plist */,
 				D04CCAD620349C8D0031FFB1 /* WebController.swift */,
 			);
-			path = HTMLPDFExample;
+			path = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
