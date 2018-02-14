@@ -28,6 +28,15 @@ extension WebController {
 private extension WebController {
 	func setupNavigationBarButtons() {
 
-		
+		let makePDF = UIBarButtonItem(title: NSLocalizedString("Save PDF", comment: "")) {
+			[unowned self] _ in
+			self.savePDF()
+		}
+
+		navigationItem.rightBarButtonItems = [makePDF]
+	}
+
+	func savePDF() {
+
 	}
 }
