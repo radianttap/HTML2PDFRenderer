@@ -68,7 +68,7 @@ private extension WebController {
 		}
 
 		let renderer = HTML2PDFRenderer()
-		renderer.render(webView: self.webView, toPDF: pdfURL, paperSize: .a4, paperMargins: UIEdgeInsetsMake(30, 0, 0, 0)) {
+		renderer.render(webView: self.webView, toPDF: pdfURL, paperSize: .a4, paperMargins: UIEdgeInsets.init(top: 30, left: 0, bottom: 0, right: 0)) {
 			url, error in
 
 			if let error = error {

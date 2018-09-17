@@ -59,7 +59,7 @@ extension NSObject: ActionClosurable {}
 
 
 extension ActionClosurable where Self: UIControl {
-	public func on(_ controlEvents: UIControlEvents, closure: @escaping (Self) -> Void) {
+	public func on(_ controlEvents: UIControl.Event, closure: @escaping (Self) -> Void) {
 		convert(closure: closure, toConfiguration: {
 			self.addTarget($0, action: $1, for: controlEvents)
 		})
@@ -88,15 +88,15 @@ extension ActionClosurable where Self: UIGestureRecognizer {
 }
 
 extension ActionClosurable where Self: UIBarButtonItem {
-	public init(barButtonSystemItem: UIBarButtonSystemItem, closure: @escaping (Self) -> Void) {
+	public init(barButtonSystemItem: UIBarButtonItem.SystemItem, closure: @escaping (Self) -> Void) {
 		self.init(barButtonSystemItem: barButtonSystemItem, target: nil, action: nil)
 		self.onTap(closure)
 	}
-	public init(title: String, style: UIBarButtonItemStyle = .plain, closure: @escaping (Self) -> Void) {
+	public init(title: String, style: UIBarButtonItem.Style = .plain, closure: @escaping (Self) -> Void) {
 		self.init(title: title, style: style, target: nil, action: nil)
 		self.onTap(closure)
 	}
-	public init(image: UIImage?, style: UIBarButtonItemStyle = .plain, closure: @escaping (Self) -> Void) {
+	public init(image: UIImage?, style: UIBarButtonItem.Style = .plain, closure: @escaping (Self) -> Void) {
 		self.init(image: image, style: style, target: nil, action: nil)
 		self.onTap(closure)
 	}
