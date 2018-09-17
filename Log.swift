@@ -21,10 +21,7 @@ protocol Loggable {
 }
 
 //	now, we use protocol extension to provide default implementation of the protocol metods
-extension Loggable {
+extension HTML2PDFRenderer: Loggable {
 	func log(level: LogLevel, _ message: @autoclosure () -> Any) {
-		print(level, message)
 	}
 }
-
-extension HTML2PDFRenderer: Loggable {}
