@@ -74,14 +74,14 @@ extension HTML2PDFRenderer {
 
 		webLoadingTimer = Timer.every(0.5, {
 			[weak self] timer in
-			guard let `self` = self else { return }
+			guard let self = self else { return }
 
 			if self.webView?.isLoading ?? false { return }
 			timer.invalidate()
 
 			self.render(webView: webView, toPDF: pdfURL, paperSize: paperSize, delegate: delegate) {
 				[weak self] pdfURL, pdfError in
-				guard let `self` = self else { return }
+				guard let self = self else { return }
 
 				self.webView?.superview?.removeFromSuperview()
 				self.webView = nil
