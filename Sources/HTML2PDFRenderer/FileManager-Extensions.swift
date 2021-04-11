@@ -11,7 +11,7 @@
 import Foundation
 
 
-extension FileManager {
+public extension FileManager {
 
 	///	Put user data in `Documents/`.
 	///	User data generally includes any files you might want to expose to the user—anything you might want the user to create, import, delete or edit.
