@@ -27,6 +27,19 @@ I’ve added simple .podspec file but I don’t use this library as CocoaPod, ev
 
 YMMV.
 
+### Swift Package Manager
+
+Add the HTML2PDFRenderer dependency in your Package.swift.
+
+```
+dependencies: [
+    .package(
+        url: "https://github.com/radianttap/HTML2PDFRenderer.git",
+        .exact("1.1.0")
+    ),
+]
+```
+
 ### Example code
 
 ```swift

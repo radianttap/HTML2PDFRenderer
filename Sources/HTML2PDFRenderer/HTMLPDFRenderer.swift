@@ -22,6 +22,8 @@ public protocol HTML2PDFRendererDelegate: class {
 public final class HTML2PDFRenderer {
 	weak var delegate: HTML2PDFRendererDelegate?
 
+	public init() {}
+
 	public typealias Callback = (URL?, Error?) -> Void
 
 	//	Internal
@@ -39,7 +41,7 @@ private extension HTML2PDFRenderer {
 	}
 }
 
-extension HTML2PDFRenderer {
+public extension HTML2PDFRenderer {
 	///	Takes the given `htmlURL`, creates hidden `WKWebView`, waits for the web page to load,
 	///	then calls the other method below.
 	///
