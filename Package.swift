@@ -7,8 +7,7 @@ let package = Package(
         .library(name: "HTML2PDFRenderer", targets: ["HTML2PDFRenderer"])
     ],
     targets: [
-        .target(name: "HTML2PDFRenderer"),
-        .testTarget(name: "HTML2PDFRendererTests", dependencies: ["HTML2PDFRenderer"])
+        .target(name: "HTML2PDFRenderer")
     ],
     swiftLanguageVersions: [.v5]
 )
