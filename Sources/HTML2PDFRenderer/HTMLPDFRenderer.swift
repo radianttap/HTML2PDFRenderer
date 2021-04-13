@@ -26,8 +26,8 @@ public final class HTML2PDFRenderer {
 
 	public typealias Callback = (URL?, Error?) -> Void
     
-    private(set) var headerHeight: CGFloat?
-    private(set) var footerHeight: CGFloat?
+    public private(set) var headerHeight: CGFloat?
+    public private(set) var footerHeight: CGFloat?
 
 	//	Internal
 
