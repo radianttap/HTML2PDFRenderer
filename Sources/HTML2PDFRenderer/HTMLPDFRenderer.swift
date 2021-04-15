@@ -25,6 +25,9 @@ public final class HTML2PDFRenderer {
 	public init() {}
 
 	public typealias Callback = (URL?, Error?) -> Void
+    
+    public var headerHeight: CGFloat?
+    public var footerHeight: CGFloat?
 
 	//	Internal
 
@@ -113,6 +116,9 @@ public extension HTML2PDFRenderer {
 
 		let renderer = UIPrintPageRenderer()
 		renderer.addPrintFormatter(webView.viewPrintFormatter(), startingAtPageAt: 0)
+        
+        headerHeight.flatMap { renderer.headerHeight = $0 }
+        footerHeight.flatMap { renderer.footerHeight = $0 }
 
 		let paperRect = CGRect(x: 0, y: 0, width: paperSize.size.width, height: paperSize.size.height)
 		renderer.setValue(paperRect, forKey: Key.paperRect.rawValue)
