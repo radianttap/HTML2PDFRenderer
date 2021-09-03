@@ -16,10 +16,16 @@ public protocol HTML2PDFRendererDelegate: AnyObject {
 	func html2pdfRenderer(_ renderer: HTML2PDFRenderer, didFailedWithError error: Error)
 }
 
+public protocol HTML2PDFRendererDataSource: AnyObject {
+    func html2pdfRenderer(_ renderer: HTML2PDFRenderer, drawHeader page: Int, in rect: CGRect)
+    func html2pdfRenderer(_ renderer: HTML2PDFRenderer, drawFooter page: Int, in rect: CGRect)
+}
+
 ///	Uses UIPrintPageRenderer to create PDF file out of HTML web page loaded in WKWebView.
 ///
 /// See `PaperSize` enum for declaration of supported pages. Extend as needed.
 public final class HTML2PDFRenderer {
+    weak var dataSource: HTML2PDFRendererDataSource?
 	weak var delegate: HTML2PDFRendererDelegate?
 
 	public init() {}
@@ -114,7 +120,7 @@ public extension HTML2PDFRenderer {
 			return
 		}
 
-		let renderer = UIPrintPageRenderer()
+		let renderer = CustomPrintPageRenderer(owner: self, dataSource: dataSource)
 		renderer.addPrintFormatter(webView.viewPrintFormatter(), startingAtPageAt: 0)
         
         headerHeight.flatMap { renderer.headerHeight = $0 }
