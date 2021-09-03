@@ -11,7 +11,7 @@
 import UIKit
 import WebKit
 
-public protocol HTML2PDFRendererDelegate: class {
+public protocol HTML2PDFRendererDelegate: AnyObject {
 	func html2pdfRenderer(_ renderer: HTML2PDFRenderer, didCreatePDFAtFileURL url: URL)
 	func html2pdfRenderer(_ renderer: HTML2PDFRenderer, didFailedWithError error: Error)
 }
@@ -49,7 +49,7 @@ public extension HTML2PDFRenderer {
 	///	then calls the other method below.
 	///
 	///	Supports both http and file URLs.
-	public func render(htmlURL: URL,
+    func render(htmlURL: URL,
 				toPDF pdfURL: URL,
 				paperSize: PaperSize,
 				paperMargins: UIEdgeInsets = .zero,
@@ -101,7 +101,7 @@ public extension HTML2PDFRenderer {
 	///
 	///	You can supply `delegate` and/or `callback` closure.
 	///	Both will be called and given back the file URL where PDF is created or an Error.
-	public func render(webView: WKWebView,
+    func render(webView: WKWebView,
 				toPDF pdfURL: URL,
 				paperSize: PaperSize,
 				paperMargins: UIEdgeInsets = .zero,
