@@ -25,8 +25,8 @@ public protocol HTML2PDFRendererDataSource: AnyObject {
 ///
 /// See `PaperSize` enum for declaration of supported pages. Extend as needed.
 public final class HTML2PDFRenderer {
-    weak var dataSource: HTML2PDFRendererDataSource?
-	weak var delegate: HTML2PDFRendererDelegate?
+    public weak var dataSource: HTML2PDFRendererDataSource?
+	public weak var delegate: HTML2PDFRendererDelegate?
 
 	public init() {}
 
